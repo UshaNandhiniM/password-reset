@@ -1,6 +1,6 @@
 import User from "../Models/userSchema.js";
 import bcrpty from "bcryptjs";
-import sendPasswordResetEmail from "../Services/nodeMAiler.js";
+import sendPasswordResetEmail from "../Services/Email.js";
 
 export const registerUser = async (req, res) => {
   try {
