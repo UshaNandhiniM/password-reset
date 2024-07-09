@@ -1,8 +1,8 @@
 import express from "express";
 import {
-  registerUser,
-  loginUser,
   forgetPassword,
+  loginUser,
+  registerUser,
   resetPassword,
 } from "../Contollers/userController.js";
 

@@ -5,8 +5,8 @@ import sendPasswordResetEmail from "../Services/Email.js";
 export const registerUser = async (req, res) => {
   try {
     const { userName, email, password } = req.body;
-    const hashPassword = await bcrpty.hash(password, 10);
-    const newUser = new User({ userName, email, password: hashPassword });
+    const hash = await bcrpty.hash(password, 10);
+    const newUser = new User({ userName, email, password: hash });
     await newUser.save();
     res.status(200).send({ message: "Successfully registered", data: newUser });
   } catch (error) {

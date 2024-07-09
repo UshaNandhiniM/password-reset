@@ -13,6 +13,7 @@ app.use(cors({
     origin:"*",
     credentials: true,
 }));
+
 //DB connection
 connectDB();
 
