@@ -57,7 +57,7 @@ export const resetPassword = async (req, res) => {
       return res.status(401).json({ Message: "Pasword Doesn't Match" });
     }
     const hash = await bcrpty.hash(confirmpassword, 10);
-    await User.findByIdAndUpdate({ _id: userid }, { password: hash });
+    await User.findByIdAndUpdate({_id: userid}, {password: hash});
     res.status(200).json({ Message: "Pasword Reset Successfully" });
   } catch (error) {
     res.status(500).json({ Message: "Internal Server Error" });
