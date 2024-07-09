@@ -10,9 +10,10 @@ const connectDB = async (req, res) => {
     const connection = await mongoose.connect(mongoDB_URL);
     console.log("MongoDB connected...");
     return connection;
-  } catch (err) {
-    console.log(err);
-    res.status(404).send("MongoDB connection Error");
+  } 
+  catch (error) 
+  {
+    res.status(500).json({ Message: "MongoDB Connection Error", Error: error });
   }
 };
 export default connectDB;

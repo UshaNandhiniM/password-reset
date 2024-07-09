@@ -24,7 +24,7 @@ export const loginUser = async (req, res) => {
     }
     const passwordMatch = await bcrpty.compare(password, userDetails.password);
     if (!passwordMatch) {
-      return res.status(404).json({ message: "Password incorrect" });
+      return res.status(500).json({ message: "Password incorrect" });
     }
 
     res.status(200).send({ message: "user Logged in successfully" });
