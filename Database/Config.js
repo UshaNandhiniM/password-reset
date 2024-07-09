@@ -12,7 +12,7 @@ const connectDB = async (req, res) => {
     return connection;
   } catch (err) {
     console.log(err);
-    res.status(500).send("MongoDB connection Error");
+    res.status(404).send("MongoDB connection Error");
   }
 };
 export default connectDB;
